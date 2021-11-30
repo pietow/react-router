@@ -1,6 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
 import "./App.css";
-import hazel from "./images/hazel.jpg";
 
 function App() {
   return (

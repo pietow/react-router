@@ -12,6 +12,12 @@ ReactDOM.render(
     <React.StrictMode>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route
+            index
+            element={
+                <Dogs allActive={true}/>
+            }
+          />
           <Route path="dogs" element={<Dogs />}>
             <Route path=":dogName" element={<Dog />}></Route>
           </Route>

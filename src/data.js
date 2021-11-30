@@ -30,5 +30,5 @@ export function getDogs() {
 }
 
 export function getDog(name) {
-    return dogs.find(dog => dog.name === name);
+  return dogs.find((dog) => dog.name === name);
 }
