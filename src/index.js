@@ -12,9 +12,9 @@ ReactDOM.render(
     <React.StrictMode>
       <Routes>
         <Route path="/" element={<App />}>
-            <Route path="dogs" element={<Dogs />}>
-                <Route path=":dogName" element={<Dog />}></Route>
-            </Route>
+          <Route path="dogs" element={<Dogs />}>
+            <Route path=":dogName" element={<Dog />}></Route>
+          </Route>
           <Route
             path="*"
             element={
