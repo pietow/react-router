@@ -9,7 +9,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App flex flex-col items-center bg-gray-900 text-white h-full">
-        <h1><a href="./home"><img className="filter invert" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffamfonts.com%2Fwp-content%2Fuploads%2Fblack-sabbath-wide.png&f=1&nofb=1" alt="" /></a></h1>
+        <h1><Link to="./home"><img className="filter invert" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffamfonts.com%2Fwp-content%2Fuploads%2Fblack-sabbath-wide.png&f=1&nofb=1" alt="" /></Link></h1>
       <div className="flex justify-between w-2/12 pt-3 pb-3">
           <Link to="vocals">Vocals</Link>
           <Link to="guitar">Guitar</Link>
