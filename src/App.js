@@ -1,29 +1,26 @@
-import  Home  from "./components/Home.js"
-import  Vocals  from "./components/Vocals.js"
-import  Guitar  from "./components/Guitar.js"
-import  Bass  from "./components/Bass.js"
-import  Drums  from "./components/Drums.js"
-import { Link, Routes, Route } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./App.css";
+import hazel from './images/hazel.jpg'
+
 
 function App() {
   return (
-    <div className="App flex flex-col items-center bg-gray-900 text-white h-full">
-        <h1><Link to="./home"><img className="filter invert" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffamfonts.com%2Fwp-content%2Fuploads%2Fblack-sabbath-wide.png&f=1&nofb=1" alt="" /></Link></h1>
-      <div className="flex justify-between w-2/12 pt-3 pb-3">
-          <Link to="vocals">Vocals</Link>
-          <Link to="guitar">Guitar</Link>
-          <Link to="bass">Bass</Link>
-          <Link to="drums">Drums</Link>
+      <div className="App m-auto flex flex-col items-center h-full w-1/2">
+        <h1 className="text-4xl">Helloz. We have dogz. Click on them for more info.</h1>
+        <div className="flex justify-between w-full pt-3 pb-3">
+          <div className="flex flex-col">
+              <img className="rounded-full border-8 mb-3 w-72" src={hazel} alt="" />
+              <Link to="vocals">hazel</Link>
+          </div>
+          <div className="flex flex-col">
+              <img className="rounded-full border-8 mb-3 w-72" src={hazel} alt="" />
+              <Link to="vocals">Vocals</Link>
+          </div>
+          <div className="flex flex-col">
+              <img className="rounded-full border-8 mb-3 w-72" src={hazel} alt="" />
+              <Link to="vocals">Vocals</Link>
+          </div>
       </div>
-      <Routes>
-          <Route path="/" element={ <Home /> }></Route>
-          <Route path="/vocals" element={ <Vocals /> }></Route>
-          <Route path="/guitar" element={ <Guitar /> }></Route>
-          <Route path="/bass" element={ <Bass /> }></Route>
-          <Route path="/drums" element={ <Drums /> }></Route>
-          <Route path="*" element={ <Home /> }></Route>
-      </Routes>
 
     </div>
   );
