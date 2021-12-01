@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { getDog } from "../data";
 
 export default function Dog() {
-  let params = useParams();
+  let params = useParams(); ///let { dogName } = useParams()
   let dog = getDog(params.dogName);
   return (
     <div>
