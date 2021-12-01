@@ -16,10 +16,9 @@ export default function dogs(props) {
                 to={`/dogs/${dog.name}`}
               >
                 <img
-                  className="rounded-full border-8 mb-3 w-72"
+                  className="rounded-full border-8 mb-3 w-72 opacity-inherit"
                   src={dog.img}
                   alt=""
-                  style={{ opacity: "inherit" }}
                 />
               </NavLink>
             </div>
