@@ -1,43 +1,57 @@
-import "./App.css"
+/** @format */
 
-import { Routes, Route } from "react-router-dom"
-import React, { useState } from "react"
+import './App.css'
 
+import { Routes, Route } from 'react-router-dom'
+import React, { useState } from 'react'
+
+import Editor from './routes/Editor'
+import Input from './routes/Input'
 
 function App() {
-    const [cards, setCards] = useState([{ up: "gg" }])
+    const [cards, setCards] = useState([
+        { up: 'gg' },
+        { down: 'G' },
+        { 'next word': 'w' },
+    ])
     const addCard = (key, value) => {
-        setCards([...cards, { key: value }])
+        setCards([...cards, { [key]: value }])
     }
     const deleteCard = (id) => {
-        setCards([...cards.slice(0, id), ...cards.slice(id)])
+        setCards([...cards.slice(0, id), ...cards.slice(id + 1)])
     }
     const editCard = (id, key, value) => {
-        setCards([...cards.slice(0, id), { key: value }, ...cards.slice(id)])
+        setCards([
+            ...cards.slice(0, id),
+            { [key]: value },
+            ...cards.slice(id + 1),
+        ])
     }
 
     return (
-        <div className="App flex flex-col items-center bg-gray-900 text-white h-full">
+        <div className="App flex p-32 flex-col items-center bg-gray-900 text-white h-screen">
             <Routes>
-                <Route path="/" element={Editor}></Route>
+                <Route
+                    path="/editor"
+                    element={
+                        <Editor
+                            inputField={<Input addCard={addCard} />}
+                            cards={cards}
+                            deleteCard={deleteCard}
+                            editCard={editCard}
+                        />
+                    }
+                ></Route>
                 {/* <Route path="/view" element={View}></Route> */}
-                {/* <Route */}
-                {/*     path="*" */}
-                {/*     element={ */}
-                {/*         <main style={{ padding: "1rem" }}> */}
-                {/*             <p>There's nothing here!</p> */}
-                {/*         </main> */}
-                {/*     } */}
-                {/* ></Route> */}
+                <Route
+                    path="*"
+                    element={
+                        <main style={{ padding: '1rem' }}>
+                            <p>There's nothing here!</p>
+                        </main>
+                    }
+                ></Route>
             </Routes>
-        </div>
-    )
-}
-
-function Editor() {
-    return (
-        <div>
-            bla
         </div>
     )
 }

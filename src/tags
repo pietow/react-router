@@ -4,11 +4,28 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Action	routes/Editor.js	/^                            Action$/;"	V
+Add	routes/Input.js	/^                        Add$/;"	V
 App	App.js	/^function App() {$/;"	F
-Editor	routes/Editor.js	/^function Editor() {$/;"	F
+Delete	routes/Editor.js	/^                                        Delete$/;"	V
+Edit	routes/Edit.js	/^                            Edit$/;"	V
+Edit	routes/Edit.js	/^const Edit = ({isOpen, setIsOpen}) => {$/;"	F
+Edit	routes/Editor.js	/^                                        Edit$/;"	V
+Editor	routes/Editor.js	/^function Editor({ cards, deleteCard, inputField }) {$/;"	F
+Input	routes/Input.js	/^const Input = ({ addCard }) => {$/;"	F
 addCard	App.js	/^    const addCard = (key, value) => {$/;"	F
-cards	App.js	/^    const [cards, setCards] = useState([{ up: "gg" }])$/;"	V
+cards	App.js	/^    const [cards, setCards] = useState([$/;"	V
 deleteCard	App.js	/^    const deleteCard = (id) => {$/;"	F
 editCard	App.js	/^    const editCard = (id, key, value) => {$/;"	F
-reportWebVitals	reportWebVitals.js	/^const reportWebVitals = onPerfEntry => {$/;"	F
-setCards	App.js	/^    const [cards, setCards] = useState([{ up: "gg" }])$/;"	V
+isOpen	routes/Editor.js	/^    const [isOpen, setIsOpen] = useState(false)$/;"	V
+key	routes/Edit.js	/^    const [key, setKey] = useState("")$/;"	V
+key	routes/Input.js	/^    const [key, setKey] = useState("")$/;"	V
+reportWebVitals	reportWebVitals.js	/^const reportWebVitals = (onPerfEntry) => {$/;"	F
+setCards	App.js	/^    const [cards, setCards] = useState([$/;"	V
+setIsOpen	routes/Editor.js	/^    const [isOpen, setIsOpen] = useState(false)$/;"	V
+setKey	routes/Edit.js	/^    const [key, setKey] = useState("")$/;"	V
+setKey	routes/Input.js	/^    const [key, setKey] = useState("")$/;"	V
+setValue	routes/Edit.js	/^    const [value, setValue] = useState("")$/;"	V
+setValue	routes/Input.js	/^    const [value, setValue] = useState("")$/;"	V
+value	routes/Edit.js	/^    const [value, setValue] = useState("")$/;"	V
+value	routes/Input.js	/^    const [value, setValue] = useState("")$/;"	V
