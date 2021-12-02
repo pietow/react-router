@@ -1,6 +1,7 @@
 {
     "tabWidth": 4,
     "semi": false,
+    "quoteProps": "consistent",
     "singleQuotes": true,
     "jsxSingleQuote":false,
     "BracketSameLine": true,

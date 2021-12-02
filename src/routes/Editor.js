@@ -1,6 +1,9 @@
-import React, { useState } from "react"
+/** @format */
 
-import Edit from "./Edit"
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import Edit from './Edit'
 
 function Editor({ cards, deleteCard, editCard, inputField }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -10,8 +13,8 @@ function Editor({ cards, deleteCard, editCard, inputField }) {
         setCardId(id)
     }
     return (
-        <div>
-            <h1 className="m-3 text-3xl">Card Editor</h1>
+        <div className="h-screen">
+            <h1 className="mb-10 text-4xl">Card Editor</h1>
             <table className="border-2">
                 <thead>
                     <tr className="border-2">
@@ -54,6 +57,16 @@ function Editor({ cards, deleteCard, editCard, inputField }) {
                 </tbody>
                 {inputField}
             </table>
+
+            <div className="mx-auto w-11/12 grid grid-cols-1 divide-y divide-yellow-500">
+                <div className="m-3"></div>
+                <Link to="/view">
+                    <button className="p-2 m-5 bg-green-600 border-2 rounded-md">
+                        Card Viewer
+                    </button>
+                </Link>
+            </div>
+
             <Edit
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}

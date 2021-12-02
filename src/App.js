@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 
 import Editor from './routes/Editor'
 import Input from './routes/Input'
+import View from './routes/View';
 
 function App() {
     const [cards, setCards] = useState([
@@ -42,7 +43,7 @@ function App() {
                         />
                     }
                 ></Route>
-                {/* <Route path="/view" element={View}></Route> */}
+                <Route path="/view" element={<View cards={cards}/>}></Route>
                 <Route
                     path="*"
                     element={
