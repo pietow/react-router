@@ -33,7 +33,7 @@ function App() {
         <div className="App flex p-32 flex-col items-center bg-gray-900 text-white h-screen">
             <Routes>
                 <Route
-                    path="/editor"
+                    path="/"
                     element={
                         <Editor
                             inputField={<Input addCard={addCard} />}

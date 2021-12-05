@@ -1,0 +1,39 @@
+/** @format */
+
+.scene {
+    perspective: 600px;
+}
+
+.card {
+    position: relative;
+    padding: 5rem;
+    transform-style: preserve-3d;
+    border: solid 1px red;
+}
+
+.card-transition {
+    transition: transform 1s;
+}
+
+[class*='card__face'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 4rem;
+    backface-visibility: hidden;
+}
+
+.card__face--front {
+    /* background: red; */
+}
+
+.card__face--back {
+    /* background: blue; */
+    transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}

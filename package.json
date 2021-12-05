@@ -41,6 +41,7 @@
     "autoprefixer": "^9.8.8",
     "postcss": "^7.0.39",
     "prettier": "^2.5.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "ts-server": "^0.0.15"
   }
 }

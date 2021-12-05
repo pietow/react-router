@@ -9,23 +9,29 @@ Add	routes/Input.js	/^                        Add$/;"	V
 App	App.js	/^function App() {$/;"	F
 Delete	routes/Editor.js	/^                                        Delete$/;"	V
 Edit	routes/Edit.js	/^                            Edit$/;"	V
-Edit	routes/Edit.js	/^const Edit = ({isOpen, setIsOpen}) => {$/;"	F
+Edit	routes/Edit.js	/^const Edit = ({ isOpen, setIsOpen, editCard, cardId, cards }) => {$/;"	F
 Edit	routes/Editor.js	/^                                        Edit$/;"	V
-Editor	routes/Editor.js	/^function Editor({ cards, deleteCard, inputField }) {$/;"	F
+Editor	routes/Editor.js	/^function Editor({ cards, deleteCard, editCard, inputField }) {$/;"	F
 Input	routes/Input.js	/^const Input = ({ addCard }) => {$/;"	F
+View	routes/View.js	/^const View = ({ cards }) => {$/;"	F
 addCard	App.js	/^    const addCard = (key, value) => {$/;"	F
+cardId	routes/Editor.js	/^    const [cardId, setCardId] = useState(null)$/;"	V
 cards	App.js	/^    const [cards, setCards] = useState([$/;"	V
+clickHandler	routes/Input.js	/^    const clickHandler = () => {$/;"	F
 deleteCard	App.js	/^    const deleteCard = (id) => {$/;"	F
 editCard	App.js	/^    const editCard = (id, key, value) => {$/;"	F
+handelEditClick	routes/Editor.js	/^    const handelEditClick = (id) => {$/;"	F
+handleClick	routes/Edit.js	/^    const handleClick = () => {$/;"	F
 isOpen	routes/Editor.js	/^    const [isOpen, setIsOpen] = useState(false)$/;"	V
-key	routes/Edit.js	/^    const [key, setKey] = useState("")$/;"	V
+key	routes/Edit.js	/^    const [key, setKey] = useState('')$/;"	V
 key	routes/Input.js	/^    const [key, setKey] = useState("")$/;"	V
 reportWebVitals	reportWebVitals.js	/^const reportWebVitals = (onPerfEntry) => {$/;"	F
+setCardId	routes/Editor.js	/^    const [cardId, setCardId] = useState(null)$/;"	V
 setCards	App.js	/^    const [cards, setCards] = useState([$/;"	V
 setIsOpen	routes/Editor.js	/^    const [isOpen, setIsOpen] = useState(false)$/;"	V
-setKey	routes/Edit.js	/^    const [key, setKey] = useState("")$/;"	V
+setKey	routes/Edit.js	/^    const [key, setKey] = useState('')$/;"	V
 setKey	routes/Input.js	/^    const [key, setKey] = useState("")$/;"	V
-setValue	routes/Edit.js	/^    const [value, setValue] = useState("")$/;"	V
+setValue	routes/Edit.js	/^    const [value, setValue] = useState('')$/;"	V
 setValue	routes/Input.js	/^    const [value, setValue] = useState("")$/;"	V
-value	routes/Edit.js	/^    const [value, setValue] = useState("")$/;"	V
+value	routes/Edit.js	/^    const [value, setValue] = useState('')$/;"	V
 value	routes/Input.js	/^    const [value, setValue] = useState("")$/;"	V
