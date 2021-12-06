@@ -8,7 +8,6 @@
     position: relative;
     padding: 5rem;
     transform-style: preserve-3d;
-    border: solid 1px red;
 }
 
 .card-transition {

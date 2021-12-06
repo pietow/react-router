@@ -9,9 +9,7 @@ const View = ({ cards }) => {
 
     const nextC = () => {
             setIsFlipped(false)
-            const length = cards.length - 1
-            if (ID === length) {setID(0)}
-            else {setID(ID + 1)}
+            setID((ID + 1) % cards.length)
     }
 
     return (
