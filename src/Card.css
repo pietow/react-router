@@ -1,7 +1,7 @@
 /** @format */
 
 .scene {
-    perspective: 600px;
+    perspective: 1000px;
 }
 
 .card {
@@ -26,11 +26,13 @@
 
 .card__face--front {
     /* background: red; */
+    backface-visibility: hidden;
 }
 
 .card__face--back {
     /* background: blue; */
     transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 
 .card.is-flipped {
