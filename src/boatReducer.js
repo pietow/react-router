@@ -38,8 +38,7 @@ export function boatReducer(state, action) {
             }
         }
         case 'gear_down': {
-            if (state.running === true)
-            {
+            if (state.running === true) {
                 return {
                     ...state,
                     gear: state.gear === -2 ? -2 : state.gear - 1,
@@ -49,32 +48,33 @@ export function boatReducer(state, action) {
             }
         }
         case 'increase_speed': {
-            const iniBoost = state.speed === 0 ? 10 : 1
-            if (state.running === true)
-            {
+            const iniBoost = state.speed < 10 ? 10 : 0
+            if (state.running === true && state.gear > 0) {
                 return {
                     ...state,
                     speed:
-                    state.speed + iniBoost + (1 / 4) * Math.abs(state.gear),
+                        state.speed + iniBoost + (1 / 4) * Math.abs(state.gear),
                 }
             } else {
                 return state
             }
         }
         case 'decrease_speed': {
-            if (state.running === true)
-            {
-                return {
-                    ...state,
-                    speed:
-                    state.speed > 1
-                    ? 1
-                    : state.speed === 0
-                    ? 0
-                    : state.speed - 0.1,
-                }
+            const newSpeed = state.speed - 1/10 * state.gear
+            if (state.running === true && state.speed > 1) {
+                return {...state, speed: 1}
+            } else if(state.running === true && newSpeed >= 0) {
+                return {...state, speed: (newSpeed)}
+            } else if(state.running === true && newSpeed <= 0) {
+                return {...state, speed: 0}
             } else {
                 return state
+            }
+        }
+        case 'set_distance': {
+            return {
+                ...state,
+                distance: state.distance + state.speed * action.seconds/(60*60)
             }
         }
         default: {
