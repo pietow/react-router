@@ -1,14 +1,12 @@
-# @format
-
 {
-    'tabWidth': 4,
-    'semi': false,
-    'quoteProps': 'consistent',
-    'singleQuotes': true,
-    'jsxSingleQuote': false,
-    'jsxBracketSameLine': true,
-    'singleQuote': true,
-    'trailingComma': 'all',
-    'arrowParens': 'always',
-    'insertPragma': true,
+    "tabWidth": 4,
+    "semi": false,
+    "quoteProps": "consistent",
+    "jsxSingleQuote":false,
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "insertPragma": true
 }
+
