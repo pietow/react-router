@@ -3,10 +3,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-{
-    /* import Edit from './Edit' */
-}
-
 function Editor({ state, dispatch, inputField, editModal }) {
     return (
         <div className="h-screen">
@@ -36,10 +32,12 @@ function Editor({ state, dispatch, inputField, editModal }) {
                                         className="border-2 rounded-md bg-yellow-500 p-1 m-1"
                                         onClick={() => {
                                             dispatch({ type: 'set_open' })
-                                            dispatch({ type: 'set_ID', cardId: id  })
+                                            dispatch({
+                                                type: 'set_ID',
+                                                cardId: id,
+                                            })
                                             dispatch({ type: 'copy_key_value' })
-                                        }}
-                                    >
+                                        }}>
                                         Edit
                                     </button>
                                 </td>
@@ -51,8 +49,7 @@ function Editor({ state, dispatch, inputField, editModal }) {
                                                 cardId: id,
                                             })
                                         }
-                                        className="border-2 rounded-md bg-red-500 p-1 m-1"
-                                    >
+                                        className="border-2 rounded-md bg-red-500 p-1 m-1">
                                         Delete
                                     </button>
                                 </td>
@@ -72,13 +69,6 @@ function Editor({ state, dispatch, inputField, editModal }) {
                 </Link>
             </div>
             {editModal}
-            {/* <Edit */}
-            {/*     isOpen={isOpen} */}
-            {/*     setIsOpen={setIsOpen} */}
-            {/*     cardId={cardId} */}
-            {/*     cards={cards} */}
-            {/*     editCard={editCard} */}
-            {/* ></Edit> */}
         </div>
     )
 }
