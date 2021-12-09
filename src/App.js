@@ -3,31 +3,16 @@
 import './App.css'
 
 import { Routes, Route } from 'react-router-dom'
-import React, { useState } from 'react'
+import { useImmerReducer } from 'use-immer'
 
+import { initialState, flashcardReducer } from './flashcardReducer'
 import Editor from './routes/Editor'
+import Edit from './routes/Edit'
 import Input from './routes/Input'
-import View from './routes/View';
+import View from './routes/View'
 
 function App() {
-    const [cards, setCards] = useState([
-        { up: 'gg' },
-        { down: 'G' },
-        { 'next word': 'w' },
-    ])
-    const addCard = (key, value) => {
-        setCards([...cards, { [key]: value }])
-    }
-    const deleteCard = (id) => {
-        setCards([...cards.slice(0, id), ...cards.slice(id + 1)])
-    }
-    const editCard = (id, key, value) => {
-        setCards([
-            ...cards.slice(0, id),
-            { [key]: value },
-            ...cards.slice(id + 1),
-        ])
-    }
+    const [state, dispatch] = useImmerReducer(flashcardReducer, initialState)
 
     return (
         <div className="App flex p-32 flex-col items-center bg-gray-900 text-white h-screen">
@@ -36,14 +21,21 @@ function App() {
                     path="/"
                     element={
                         <Editor
-                            inputField={<Input addCard={addCard} />}
-                            cards={cards}
-                            deleteCard={deleteCard}
-                            editCard={editCard}
+                            inputField={
+                                <Input state={state} dispatch={dispatch} />
+                            }
+                            editModal={
+                                <Edit state={state} dispatch={dispatch} />
+                            }
+                            state={state}
+                            dispatch={dispatch}
                         />
                     }
                 ></Route>
-                <Route path="/view" element={<View cards={cards}/>}></Route>
+                <Route
+                    path="/view"
+                    element={<View state={state} dispatch={dispatch} />}
+                ></Route>
                 <Route
                     path="*"
                     element={

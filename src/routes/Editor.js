@@ -1,17 +1,13 @@
 /** @format */
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Edit from './Edit'
+{
+    /* import Edit from './Edit' */
+}
 
-function Editor({ cards, deleteCard, editCard, inputField }) {
-    const [isOpen, setIsOpen] = useState(false)
-    const [cardId, setCardId] = useState(null)
-    const handelEditClick = (id) => {
-        setIsOpen(!isOpen)
-        setCardId(id)
-    }
+function Editor({ state, dispatch, inputField, editModal }) {
     return (
         <div className="h-screen">
             <h1 className="mb-10 text-4xl">Card Editor</h1>
@@ -26,7 +22,7 @@ function Editor({ cards, deleteCard, editCard, inputField }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {cards.map((card, id) => {
+                    {state.cards.map((card, id) => {
                         return (
                             <tr key={id}>
                                 <td className="border-2">
@@ -38,14 +34,23 @@ function Editor({ cards, deleteCard, editCard, inputField }) {
                                 <td className="border-2">
                                     <button
                                         className="border-2 rounded-md bg-yellow-500 p-1 m-1"
-                                        onClick={() => handelEditClick(id)}
+                                        onClick={() => {
+                                            dispatch({ type: 'set_open' })
+                                            dispatch({ type: 'set_ID', cardId: id  })
+                                            dispatch({ type: 'copy_key_value' })
+                                        }}
                                     >
                                         Edit
                                     </button>
                                 </td>
                                 <td className="border-2">
                                     <button
-                                        onClick={() => deleteCard(id)}
+                                        onClick={() =>
+                                            dispatch({
+                                                type: 'delete',
+                                                cardId: id,
+                                            })
+                                        }
                                         className="border-2 rounded-md bg-red-500 p-1 m-1"
                                     >
                                         Delete
@@ -66,14 +71,14 @@ function Editor({ cards, deleteCard, editCard, inputField }) {
                     </button>
                 </Link>
             </div>
-
-            <Edit
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-                cardId={cardId}
-                cards={cards}
-                editCard={editCard}
-            ></Edit>
+            {editModal}
+            {/* <Edit */}
+            {/*     isOpen={isOpen} */}
+            {/*     setIsOpen={setIsOpen} */}
+            {/*     cardId={cardId} */}
+            {/*     cards={cards} */}
+            {/*     editCard={editCard} */}
+            {/* ></Edit> */}
         </div>
     )
 }

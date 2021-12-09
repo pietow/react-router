@@ -1,11 +1,10 @@
 import { useState } from "react"
 
-const Input = ({ addCard }) => {
+const Input = ({ state, dispatch }) => {
     const [key, setKey] = useState("")
     const [value, setValue] = useState("")
 
     const clickHandler = () => {
-        addCard(key, value)
         setKey("")
         setValue("")
     }
@@ -17,21 +16,24 @@ const Input = ({ addCard }) => {
                     <input
                         className="text-black border-2 rounded mx-2"
                         type="text"
-                        onChange={(e) => setKey(e.target.value)}
-                        value={key}
+                        onChange={(e) => dispatch({type: 'set_key', key: e.target.value})}
+                        value={state.key}
                     />
                 </td>
                 <td className="border-2">
                     <input
                         className="text-black border-2 rounded mx-2"
                         type="text"
-                        onChange={(e) => setValue(e.target.value)}
-                        value={value}
+                        onChange={(e) => dispatch({type: 'set_value', value: e.target.value})}
+                        value={state.value}
                     />
                 </td>
                 <td colSpan="2">
                     <button
-                        onClick={clickHandler}
+                    onClick={() => {
+                        dispatch({type: 'add'})
+                        dispatch({type: 'clear'})
+                    }}
                         className="border-2  rounded-md bg-green-500 p-1 px-10 m-1"
                     >
                         Add

@@ -1,16 +1,19 @@
 /** @format */
 import '../Card.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const View = ({ cards }) => {
+const View = ({ state, dispatch }) => {
     const [isFlipped, setIsFlipped] = useState(false)
-    const [ID, setID] = useState(0)
 
     const nextC = () => {
             setIsFlipped(false)
-            setID((ID + 1) % cards.length)
+            dispatch({type:'inc_card'})
     }
+
+    useEffect(() => {
+        dispatch({type: 'set_id_zero'})
+    }, [dispatch])
 
     return (
         <div className="w-full">
@@ -24,10 +27,10 @@ const View = ({ cards }) => {
                     }
                 >
         <div className="card__face--front">
-            {Object.keys(cards[ID])}
+            {Object.keys(state.cards[state.cardId])}
         </div>
         <div className="card__face--back">
-            {Object.values(cards[ID])}
+            {Object.values(state.cards[state.cardId])}
         </div>
     </div>
 </div>
